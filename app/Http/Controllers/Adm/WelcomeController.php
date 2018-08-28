@@ -1,0 +1,15 @@
+<?php
+
+namespace App\Http\Controllers\Adm;
+
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+
+class WelcomeController extends Controller
+{
+
+    public function index(){
+        return view('adm.home');
+    }
+
+}

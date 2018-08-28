@@ -1,0 +1,139 @@
+/* Page sections */
+
+.banner{
+    width: 100%;
+}
+
+nav {
+    background-color: #00334d;
+    min-height: 45px;
+}
+
+body {
+    background-color: #00334d; 
+}
+
+#maindiv{
+    padding: 15px;
+    background-color: #FFF; 
+}
+
+.btn-right{
+    float:right;
+}
+
+.footer{
+    background-color: #00334d;
+    color: #FFF;
+}
+
+/* Components customisation */
+
+.post-col{
+    padding: 0px 10px 5px 10px;
+    /*padding: 5px;*/
+}
+
+.post{
+    background-color: #DDDDDD;
+    padding: 5px;
+    margin: 5px;
+    height: 100%;
+    width: 100%;
+}
+
+.post-img{
+    height: 250px;
+}
+
+.post-date{
+    text-align: right;
+}
+
+.post-btn{
+    text-align: right;
+}
+
+.post-link{
+    font-size: 16px;
+    font-weight: 400;
+    text-decoration: none;
+}
+
+a:hover{
+    text-decoration: none;
+}
+
+.card-text{
+    height: 200px;
+}
+
+.hover-btn{
+    color: black;
+    background-color: lightgray;
+    line-height: 15px;
+    border-color: gray;
+}
+
+.aux-col{
+    padding: 0px 10px 5px 10px;
+}
+
+.aux-card{
+    background-color: #EEEEEE;
+}
+
+.tag{
+    font-size: 80%;
+    min-width: 100px;
+    padding: 3px;
+}
+
+.icon-16{
+    height: 16px;
+    width: 16px;
+}
+
+.icon-20{
+    height: 20px;
+    width: 20px;
+}
+
+.adm-anchor{
+    width: 100%;
+    text-align: center;
+}
+
+/* Framework customisation */
+
+.navbar-brand{
+    font-weight: normal;
+    font-size: 16px;
+}
+
+.sticky.is-sticky {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+}
+
+.dropdown:hover > .dropdown-menu {
+    display: block;
+}
+
+.dropdown > .dropdown-toggle:active {
+    /*Without this, clicking will make it sticky*/
+    pointer-events: none;
+}
+
+.dropdown-menu{
+    /*background-color: #b8bbbe;*/
+    background-color: #00334d;
+}
+
+.dropdown-item{
+    color: lightgray;
+}
