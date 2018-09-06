@@ -7,11 +7,13 @@
                     <div class="col-sm-10" style="margin: 10px 60px 10px 60px;">
                         <h2 class="card-title" style="margin: 25px;">{{$page->title}}</h2>
                         <hr/>
-                        <div class="card-body row">
-                            <div class="col-sm-12">
-                                <p><?=$page->content?></p>
+                        @if(strlen(trim($page->content))>0)
+                            <div class="card-body row">
+                                <div class="col-sm-12">
+                                    <p><?=$page->content?></p>
+                                </div>
                             </div>
-                        </div>
+                        @endif
                     </div>
                     </div>
                     <div class="row">
@@ -23,7 +25,7 @@
                                 @endif
                                 <div class="row">
                                     @foreach($page->photos as $pagePhoto)
-                                        <div class="col-sm-3" style="margin: 15px; text-align: center;">
+                                        <div class="col-sm-3" style="margin: 30px;text-align: center;">
                                             <a href="{{asset($pagePhoto->url())}}"
                                                data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4">
                                                 <img style="height: 150px" src="{{asset($pagePhoto->thumbUrl())}}"  />
