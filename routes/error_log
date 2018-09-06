@@ -1,0 +1,4 @@
+[28-Aug-2018 23:48:10 America/Chicago] PHP Fatal error:  Uncaught Error: Class 'Artisan' not found in /home/uabre534/public_html/routes/console.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/uabre534/public_html/routes/console.php on line 16

@@ -1,0 +1,2 @@
+[28-Aug-2018 19:41:46 America/Chicago] PHP Fatal error:  Class 'Illuminate\Database\Seeder' not found in /home/uabre534/public_html/database/seeds/MessageSeeder.php on line 6
+[28-Aug-2018 22:06:20 America/Chicago] PHP Fatal error:  Class 'Illuminate\Database\Seeder' not found in /home/uabre534/public_html/database/seeds/PostTableSeeder.php on line 6
