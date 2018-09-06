@@ -17,7 +17,7 @@
                     <div class="row">
                         <div class="col-sm-10" style="margin: 10px 80px 10px 80px;">
                             @if(sizeof($page->photos) > 0)
-                                @if(strlen(trim($pag->content))>0)
+                                @if(strlen(trim($page->content))>0)
                                     <h4>Fotos</h4>
                                     <hr />
                                 @endif
