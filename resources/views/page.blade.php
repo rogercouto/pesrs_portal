@@ -4,7 +4,7 @@
         <div class="col-sm-12">
             <div class="card post" style="min-height: 400px;">
                 <div class="row">
-                    <div class="col-sm-10" style="margin: 10px 80px 10px 80px;">
+                    <div class="col-sm-10" style="margin: 10px 60px 10px 60px;">
                         <h2 class="card-title" style="margin: 25px;">{{$page->title}}</h2>
                         <hr/>
                         <div class="card-body row">
@@ -17,8 +17,10 @@
                     <div class="row">
                         <div class="col-sm-10" style="margin: 10px 80px 10px 80px;">
                             @if(sizeof($page->photos) > 0)
-                                <h4>Fotos</h4>
-                                <hr />
+                                @if(strlen(trim($pag->content))>0)
+                                    <h4>Fotos</h4>
+                                    <hr />
+                                @endif
                                 <div class="row">
                                     @foreach($page->photos as $pagePhoto)
                                         <div class="col-sm-3" style="margin: 15px; text-align: center;">
