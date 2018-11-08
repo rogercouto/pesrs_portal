@@ -94,10 +94,13 @@ class TagController extends Controller
      * Remove the specified resource from storage.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function destroy($id)
     {
-        dd($id);
+        $this->tagService->destroy($id);
+        return Redirect::route('tags.index')
+            ->with("message","Tag excluida com sucesso!")
+            ->with("message-type","success");
     }
 }

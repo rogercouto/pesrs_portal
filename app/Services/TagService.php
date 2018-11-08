@@ -99,4 +99,13 @@ class TagService
         return Tag::orderBy('id', 'DESC')->paginate(self::PAGE_SIZE);
     }
 
+    public function destroy(int $id){
+        $tag = $this->get($id);
+        foreach ($tag->posts as $post){
+            $tag->posts()->detach($post->id);
+            $tag->save();
+        }
+        Tag::destroy($id);
+    }
+
 }
