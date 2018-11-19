@@ -36,7 +36,7 @@ class TagController extends Controller
      */
     public function create()
     {
-        //
+        dd("ue");
     }
 
     /**
@@ -47,6 +47,8 @@ class TagController extends Controller
      */
     public function store(Request $request)
     {
+        dd($request);
+        /*
         $this->validate($request, [
             'name' => 'required'
         ]);
@@ -54,6 +56,7 @@ class TagController extends Controller
         return Redirect::route('tags.index')
             ->with("message","Tag criada com sucesso!")
             ->with("message-type","success");
+        */
     }
 
     /**
