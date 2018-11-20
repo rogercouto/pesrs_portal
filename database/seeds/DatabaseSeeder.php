@@ -11,12 +11,12 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        /*
         DB::table('users')->insert([
-            'name' => 'Administrador',
-            'email' => 'admin@gmail.com',
-            'password' => bcrypt('teste123'),
+            'name' => 'Administrador2',
+            'email' => 'admin2@gmail.com',
+            'password' => bcrypt('uabre4778ti'),
         ]);
+        /*
         $this->call(PostTableSeeder::class);
         $this->call(MessageSeeder::class);
          */

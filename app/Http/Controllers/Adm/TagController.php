@@ -78,7 +78,7 @@ class TagController extends Controller
      */
     public function edit($id)
     {
-        //
+
     }
 
     /**
@@ -86,11 +86,17 @@ class TagController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function update(Request $request, $id)
     {
-        dd($request);
+        $this->validate($request, [
+            'name' => 'required'
+        ]);
+        $this->tagService->update($request, $id);
+        return Redirect::route('tags.index')
+            ->with("message","Tag atualizada com sucesso!")
+            ->with("message-type","success");
     }
 
     /**

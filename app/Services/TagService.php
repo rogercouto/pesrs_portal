@@ -18,6 +18,13 @@ class TagService
         return $tag;
     }
 
+    public function update($request, $id){
+        $tag = Tag::where('id', $id)->firstOrFail();
+        $tag->fill($request->all());
+        $tag->update();
+        return $tag;
+    }
+
     /**
      * Verify if have some tag
      * @param $tagName - name of a tag
