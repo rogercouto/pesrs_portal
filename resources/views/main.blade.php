@@ -22,7 +22,7 @@
                                         @endisset
                                          " alt="Card image cap"/>
 
-                                    <p class="card-title post-link" style="height: 50px">{{$post->title}}</p>
+                                    <br/><br/><p class="card-title post-link" style="height: 50px">{{$post->title}}</p>
 
                                 </a>
                                 @foreach($post->tags as $tag)
