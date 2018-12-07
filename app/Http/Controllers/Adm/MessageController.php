@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Adm;
 use App\Services\MessageService;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Redirect;
 
 class MessageController extends Controller
@@ -73,4 +74,23 @@ class MessageController extends Controller
             ->with("message-type","success");
     }
 
+    public function answer(Request $request, int $id){
+        $originalMessage = $this->messageService->get($id);
+        $subject = $request->subject;
+        $content = $request->content;
+        $data = array('content'=>$content);
+        Mail::send('mail', $data,
+            function($message) use ($subject, $originalMessage) {
+                $message->from('site@uabrestingaseca.com.br',
+                    'Polo Eduacacional Superior de Restinga Sêca');
+                $message
+                    ->to($originalMessage->email, $originalMessage->email)
+                    ->subject($subject);
+            }
+        );
+        $this->messageService->setAnswered($originalMessage, 1);
+        return Redirect::route('messages.show',['id'=>$id])
+            ->with("message","Resposta enviada!")
+            ->with("message-type","success");
+    }
 }

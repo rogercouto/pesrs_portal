@@ -9,7 +9,7 @@
             @endif
             <div class="form-group">
                 <label for="inputTitle">Título:</label>
-                <input id="inputTitle" type="text" name="title"
+                <input id="inputTitle" type="text" name="title" maxlength="50"
                        @if(isset($post->title))
                             value="{{$post->title }}"
                        @endif

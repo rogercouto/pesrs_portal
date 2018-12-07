@@ -60,4 +60,5 @@ Route::group(['prefix' => 'adm', 'middleware' => 'auth'], function (){
     Route::get('/messages/{id}/read', 'Adm\MessageController@read')->name('messages.read');
     Route::put('/messages/{id}/setreaded', 'Adm\MessageController@setReaded')->name('messages.setreaded');
     Route::put('/messages/{id}/setanswered', 'Adm\MessageController@setAnswered')->name('messages.setanswered');
+    Route::post('/messages/{id}/answer', 'Adm\MessageController@answer')->name('messages.answer');
 });

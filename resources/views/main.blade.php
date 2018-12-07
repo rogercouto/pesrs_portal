@@ -23,7 +23,7 @@
                                          " alt="Card image cap"/>
 
                                     <br/><br/><p class="card-title post-link" style="height: 50px">{{$post->title}}</p>
-
+                                    <br />
                                 </a>
                                 @foreach($post->tags as $tag)
                                     <span class="badge-primary" style="color: #FFFFFF;padding: 5px;border-radius: 5px;">{{$tag->name}}</span>
@@ -121,7 +121,7 @@
             }
             var subject = document.getElementById("input_subject").value;
             if (subject == ""){
-                document.getElementById("btn_submit").disabled = true;
+                document.getElementById("btn_send").disabled = true;
                 return;
             }
             var content = document.getElementById("input_content").value;
