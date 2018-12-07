@@ -30,7 +30,7 @@ class PageHelper
     }
 
     public static function getPostsWithBanners(){
-        return Post::whereRaw('banner_path is not null and (banner_limit is null or banner_limit >= now())')->get()->sortByDesc('id');
+        return Post::whereRaw('banner_path is not null and (banner_limit is null or banner_limit > now())')->get()->sortByDesc('id');
     }
 
 
