@@ -56,6 +56,7 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
+        $request['draft'] = ($request->isDraft != null) ? 1 : 0;
         $this->validate($request, [
             'title' => 'min: 1 | max: 50 | required'
         ]);

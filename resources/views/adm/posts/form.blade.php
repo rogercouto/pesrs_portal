@@ -33,8 +33,8 @@
             <!-- Draft -->
             <div class="form-group">
                 <label for="inputDraft">Rascunho:</label>
-                <input id="inputDraft" type="checkbox" name="draft"
-                        @if(isset($post)&&isset($post->draft)&&$post->draft)
+                <input id="inputDraft" type="checkbox" name="isDraft"
+                        @if((isset($post)&&isset($post->draft)&&$post->draft)||(!isset($post)))
                             checked="checked"
                         @endif>
             </div>
