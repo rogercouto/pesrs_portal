@@ -78,24 +78,29 @@
                 <li>
                     <a href="{{route('messages')}}"><i class="fa fa-fw fa-envelope"></i>Mensagens</a>
                 </li>
-                <li>
-                    <a href="#sm_expand_3" data-toggle="collapse">
-                        <i class="fa fa-fw fa-ellipsis-h"></i> Menu
-                    </a>
-                    <ul id="sm_expand_3" class="list-unstyled collapse">
-                        <li><a href="{{route('menus.create')}}"><i class="fa fa-plus-square"></i> Criar item</a></li>
-                        <li><a href="{{route('menus.index')}}"><i class="fa fa-list"></i> Listar itens</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#sm_expand_4" data-toggle="collapse">
-                        <i class="fa fa-fw fa-file-alt"></i> Páginas
-                    </a>
-                    <ul id="sm_expand_4" class="list-unstyled collapse">
-                        <li><a href="{{route('pages.create')}}"><i class="fa fa-plus-square"></i> Criar</a></li>
-                        <li><a href="{{route('pages.index')}}"><i class="fa fa-list"></i> Listar</a></li>
-                    </ul>
-                </li>
+                @if(\App\Helpers\AdmHelper::isAdmin())
+                    <li>
+                        <a href="#sm_expand_3" data-toggle="collapse">
+                            <i class="fa fa-fw fa-ellipsis-h"></i> Menu
+                        </a>
+                        <ul id="sm_expand_3" class="list-unstyled collapse">
+                            <li><a href="{{route('menus.create')}}"><i class="fa fa-plus-square"></i> Criar item</a></li>
+                            <li><a href="{{route('menus.index')}}"><i class="fa fa-list"></i> Listar itens</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#sm_expand_4" data-toggle="collapse">
+                            <i class="fa fa-fw fa-file-alt"></i> Páginas
+                        </a>
+                        <ul id="sm_expand_4" class="list-unstyled collapse">
+                            <li><a href="{{route('pages.create')}}"><i class="fa fa-plus-square"></i> Criar</a></li>
+                            <li><a href="{{route('pages.index')}}"><i class="fa fa-list"></i> Listar</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="{{route('settings')}}"><i class="fa fa-fw fa-cog"></i>Configurações</a>
+                    </li>
+                @endif
                 <!--
                 <li>
                     <a href="#sm_expand_5" data-toggle="collapse">

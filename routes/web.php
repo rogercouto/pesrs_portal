@@ -61,4 +61,9 @@ Route::group(['prefix' => 'adm', 'middleware' => 'auth'], function (){
     Route::put('/messages/{id}/setreaded', 'Adm\MessageController@setReaded')->name('messages.setreaded');
     Route::put('/messages/{id}/setanswered', 'Adm\MessageController@setAnswered')->name('messages.setanswered');
     Route::post('/messages/{id}/answer', 'Adm\MessageController@answer')->name('messages.answer');
+
+    Route::get('/settings', 'Adm\SettingsController@index')->name('settings');
+    Route::post('/settings/store', 'Adm\SettingsController@store')->name('settings.store');
+    Route::put('/settings/{key}/update', 'Adm\SettingsController@update')->name('settings.update');
+    Route::delete('/settings/{key}/destroy', 'Adm\SettingsController@destroy')->name('settings.destroy');
 });

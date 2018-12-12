@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Adm;
 
+use App\Models\Setting;
 use App\Services\MessageService;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -26,7 +27,21 @@ class MessageController extends Controller
             'content' => 'required'
         ]);
         //ver como valida e-mail posteriormente
-        $this->messageService->send($request);
+        $savedMessage = $this->messageService->send($request);
+        $setting = Setting::where('key','messages.email')->first();
+        if ($setting != null && $setting->value != ''){
+            $subject = 'uabrestingaseca.com.br: '.$savedMessage->subject;
+            $data = array('data'=> $savedMessage );
+            Mail::send('messagemail', $data,
+                function($message) use ($subject, $setting, $savedMessage) {
+                    $message->from('site@uabrestingaseca.com.br',
+                        'Polo Eduacacional Superior de Restinga Sêca');
+                    $message
+                        ->to($setting->value, $setting->email)
+                        ->subject($subject);
+                }
+            );
+        }
         return Redirect::route('main')
             ->with("message","Mensagem enviada! Em breve entraremos em contato.")
             ->with("message-type","success");
